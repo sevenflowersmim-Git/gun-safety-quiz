@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猟銃等初心者講習会 対策クイズ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- 開始画面 -->
+        <section id="startScreen">
+
+            <h1>猟銃等初心者講習会<br>対策クイズ</h1>
+
+            <div class="setting-group">
+
+                <label for="modeSelect">
+                    出題モード
+                </label>
+
+                <select id="modeSelect">
+                    <option value="all">ランダム
+                    </option>
+                    <option value="weak">苦手問題</option>
+                </select>
+
+            </div>
+
+            <div class="setting-group">
+
+                <label for="categorySelect">
+                    カテゴリ
+                </label>
+
+                <select id="categorySelect">
+                    <option value="all">すべて</option>
+                    <option value="安全管理">安全管理</option>
+                    <option value="法令">法令</option>
+                    <option value="保管・運搬">保管・運搬</option>
+                </select>
+
+            </div>
+
+            <div class="setting-group">
+
+                <label for="countSelect">
+                    問題数
+                </label>
+
+                <select id="countSelect">
+                    <option value="5">5問</option>
+                    <option value="10" selected>10問</option>
+                    <option value="20">20問</option>
+                    <option value="9999">全問</option>
+                </select>
+
+            </div>
+
+            <button id="startButton"
+                    onclick="startQuiz()">
+                クイズ開始
+            </button>
+
+        </section>
+
+        <!-- クイズ画面 -->
+        <section id="quizScreen" style="display:none;">
+
+            <p id="progress"></p>
+
+            <p id="scoreDisplay"></p>
+
+            <div id="questionArea">
+
+                <p id="question"></p>
+
+            </div>
+
+            <div id="answerButtons">
+
+                <button id="maru"
+                        onclick="checkAnswer(true)">
+                    ○
+                </button>
+
+                <button id="batsu"
+                        onclick="checkAnswer(false)">
+                    ×
+                </button>
+
+            </div>
+
+            <p id="result"></p>
+
+            <div id="explanationArea">
+
+                <p id="explanation"></p>
+
+            </div>
+
+            <button id="nextButton"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+                次へ
+            </button>
+            <div id="progressBarContainer">
+
+                <div id="progressBar"></div>
+
+            </div>
+            
+
+        </section>
+
+        <!-- 結果画面 -->
+        <section id="resultScreen" style="display:none;">
+
+            <h2>クイズ終了！</h2>
+
+            <p id="finalScore"></p>
+
+            <p id="finalRate"></p>
+            <p id="achievement"></p>
+
+            <div class="result-buttons">
+
+                <button onclick="returnToMenu()">
+                    メニューへ戻る
+                </button>
+
+                <button onclick="reviewWrongQuestions()">
+                    苦手問題を復習
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
