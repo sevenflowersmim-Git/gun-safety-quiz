@@ -694,7 +694,23 @@ function finishQuiz() {
 // メニューへ戻る
 // ====================
 
+function quitQuiz() {
+
+    const ok = confirm(
+        "クイズを終了してメニューに戻りますか？"
+    );
+
+    if (!ok) return;
+
+    showMenu();
+}
+
 function returnToMenu() {
+
+    showMenu();
+}
+
+function showMenu() {
 
     document.getElementById("resultScreen")
         .style.display = "none";

@@ -225,3 +225,13 @@ button:hover:not(:disabled) {
 
     margin-top: 20px;
 }
+#menuButton {
+
+    margin-bottom: 20px;
+
+    padding: 8px 16px;
+
+    font-size: 14px;
+
+    background-color: #888;
+}
