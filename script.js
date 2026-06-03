@@ -582,6 +582,7 @@ document.getElementById("progressBar")
 
 function checkAnswer(userAnswer) {
 
+   
     const question =
         questions[current];
 
@@ -620,6 +621,7 @@ function checkAnswer(userAnswer) {
 
     document.getElementById("nextButton")
         .style.display = "block";
+    
 }
 
 // ====================
